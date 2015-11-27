@@ -568,8 +568,8 @@ sparrow.prototype.mergeImage = function(img1, img2, w, h, l, t, r){
 			$(options.container).append('<canvas id="mergeImageCanvas" style="display:none;"></canvas>');
 
 			var canvas = $("#mergeImageCanvas")[0];
-			canvas.width = 298;
-			canvas.height = 224;
+			canvas.width = 303;
+			canvas.height = 282;
 			var ctx = $("#mergeImageCanvas")[0].getContext("2d");
 			var imgObj = [new Image(), new Image()];
 
@@ -577,6 +577,9 @@ sparrow.prototype.mergeImage = function(img1, img2, w, h, l, t, r){
 			imgObj[1].src = options.img[1];
 
 			if (typeof options.scale != 'undefined') {
+                
+                var adjustmentX = 27 + ( -65 - parseInt($('.jcarousel').jcarousel('visible').find('img').css('margin-left').replace('px','')) );
+                var adjustmentY = 13 + ( -12 - parseInt($('.jcarousel').jcarousel('visible').find('img').css('margin-top').replace('px','')));
 
 				var x = options.width / 100;
 				var n = options.scale * 100;
@@ -585,9 +588,9 @@ sparrow.prototype.mergeImage = function(img1, img2, w, h, l, t, r){
 				var y = options.height / 100;
 				options.height = y * n;
 
-				options.x -= (x * (n - 100)) / 2;
+				options.x -= (x * (n - 100)) / 2 - adjustmentX;
 
-				options.y -= (y * (n - 100)) / 2;
+				options.y -= (y * (n - 100)) / 2 - adjustmentY;
 			}
 
 			imgObj[0].onload = function() {
@@ -598,7 +601,7 @@ sparrow.prototype.mergeImage = function(img1, img2, w, h, l, t, r){
 				ctx.drawImage(imgObj[0], - options.width/2 , - options.height/2, options.width, options.height);
 				ctx.restore();
 				imgObj[1].onload = function() {
-					ctx.drawImage(imgObj[1], 0, 0, 298, 224);
+					ctx.drawImage(imgObj[1], 0, 0, 303, 282);
 					var img = $("#mergeImageCanvas")[0].toDataURL("image/png");
 					$.uploadImage({
 						'img' : img,
