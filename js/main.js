@@ -125,7 +125,7 @@ var sparrow = function(){
 	this.merged = '';
 	this.shareHtml = '';
 
-	this.site , this.selfie , this.choose , this.fb_image , this.tw_image = false;
+	this.site , this.selfie , this.choose , this.fb_image , this.tw_image, this.guided = false;
 
 	this.sdk.loadJs(this.sdk.path + 'js/jquery.js', function(){
 		_this.sdk.loadJs(_this.sdk.path + 'js/jquery-ui.js', function(){
@@ -133,7 +133,6 @@ var sparrow = function(){
 			_this.sdk.loadJs(_this.sdk.path + 'js/transit.js');
 			_this.sdk.loadJs(_this.sdk.path + 'js/exif.js');
 			_this.sdk.loadJs(_this.sdk.path + 'js/hammer.js');
-			_this.sdk.loadJs(_this.sdk.path + 'js/html2canvas.js');
 			_this.parent = $('#rma-widget');
 			_this.firstScreen();
 		});
@@ -145,7 +144,57 @@ sparrow.prototype.preload = function(){
   	var _this = this;
   	var script = document.createElement('SCRIPT');
   	var str = '';
-  	str = str + 'var share = new Image();' +'var logo = new Image();' +'var girls = new Image();' +'var shampoo = new Image();' +'logo.src='+ _this.sdk.path+' "img/logo.png";'+'girls.src='+ _this.sdk.path+' "img/1-frame/girls.png";'+'shampoo.src='+ _this.sdk.path+' "img/shampoo.png";';
+  	str = str + 'var share = new Image();'+
+  	'var logo = new Image();' +
+  	'var girls = new Image();' +
+  	'var shampoo = new Image();' +
+  	'var circle = new Image();' +
+  	'var girls = new Image();' +
+  	'var arrow_left = new Image();' +
+  	'var arrow_right = new Image();' +
+  	'var chef_01 = new Image();' +
+  	'var dancer_01 = new Image();' +
+  	'var designer_01 = new Image();' +
+  	'var model_01 = new Image();' +
+  	'var singer_01 = new Image();' +
+  	'var writer_01 = new Image();' +
+  	'var photographer_01 = new Image();' +
+  	'var ring = new Image();' +
+  	'var chef_02 = new Image();' +
+  	'var dancer_02 = new Image();' +
+  	'var designer_02 = new Image();' +
+  	'var model_02 = new Image();' +
+  	'var singer_02 = new Image();' +
+  	'var writer_02 = new Image();' +
+  	'var photographer_02 = new Image();' +
+  	'var words_bottom = new Image();' +
+  	'var words_top = new Image();' +
+  	'var words_fourth = new Image();' +
+  	'logo.src='+ _this.sdk.path+' "img/logo.png";'+
+  	'girls.src='+ _this.sdk.path+' "img/1-frame/girls.png";'+
+  	'shampoo.src='+ _this.sdk.path+' "img/shampoo.png";'+
+  	'circle.src='+ _this.sdk.path+' "img/1-frame/circle.png";'+
+  	'girls.src='+ _this.sdk.path+' "img/1-frame/girls.png";'+
+  	'arrow_left.src='+ _this.sdk.path+' "img/2-frame/arrow-left.png";'+
+  	'arrow_right.src='+ _this.sdk.path+' "img/2-frame/arrow-right.png";'
+  	'chef_01.src='+ _this.sdk.path+' "img/2-frame/chef_01.png";'+
+  	'dancer_01.src='+ _this.sdk.path+' "img/2-frame/dancer_01.png";'
+  	'designer_01.src='+ _this.sdk.path+' "img/2-frame/designer_01.png";'+
+  	'model_01.src='+ _this.sdk.path+' "img/2-frame/model_01.png";'
+  	'singer_01.src='+ _this.sdk.path+' "img/2-frame/singer_01.png";'+
+  	'writer_01.src='+ _this.sdk.path+' "img/2-frame/writer_01.png";' +
+  	'photographer_01.src='+ _this.sdk.path+' "img/2-frame/photographer_01.png";'+
+  	'ring.src='+ _this.sdk.path+' "img/2-frame/ring.png";'+
+  	'chef_02.src='+ _this.sdk.path+' "img/3-frame/chef_02.png";'+
+  	'dancer_02.src='+ _this.sdk.path+' "img/3-frame/dancer_02.png";'
+  	'designer_02.src='+ _this.sdk.path+' "img/3-frame/designer_02.png";'+
+  	'model_02.src='+ _this.sdk.path+' "img/3-frame/model_02.png";'
+  	'singer_02.src='+ _this.sdk.path+' "img/3-frame/singer_02.png";'+
+  	'writer_02.src='+ _this.sdk.path+' "img/3-frame/writer_02.png";' +
+  	'photographer_02.src='+ _this.sdk.path+' "img/3-frame/photographer_02.png";'+
+  	'words_bottom.src='+ _this.sdk.path+' "img/3-frame/words_bottom.png";' +
+  	'words_top.src='+ _this.sdk.path+' "img/3-frame/words_top.png";'+
+  	'words_fourth.src='+ _this.sdk.path+' "img/4-frame/words.png";';
 	script.innerHTML = str;
 	_this.sdk.bodyTag.appendChild(script);
 }
@@ -167,6 +216,21 @@ sparrow.prototype.firstScreen = function(){
 		'</div>' +
 		'</div><div class="loader-wrapper hidden"><div class="loader">Loading...</div></div>'
 		);
+	$('.fb-button.top').on('click', function(){
+		if(!_this.fb_image){
+			_this.sdk.tracker('E', 'ss_facebook');
+		}
+		_this.fb_image = true;
+		_this.sdk.linkOpener('https://www.facebook.com/SunsilkIndonesia');
+	});
+
+	$('.tw-button.top').on('click', function(){
+		if(!_this.tw_image){
+			_this.sdk.tracker('E', 'ss_twitter');
+		}
+		_this.tw_image = true;
+		_this.sdk.linkOpener('https://twitter.com/sunsilkid');
+	});
 	this.fillForm();
 }
 
@@ -271,9 +335,15 @@ sparrow.prototype.secondScreen = function(img, match){
 			$(this).css('background', '#FFFFFF')
 		}).jcarouselPagination();
 		_this.events();
-		setTimeout(function(){
+		if(!_this.guided){
+			setTimeout(function(){
+				$('.guide-wrapper').addClass('hidden');
+
+			}, 7000);
+		}else{
 			$('.guide-wrapper').addClass('hidden');
-		}, 1000);
+		}
+		_this.guided = true;
 	});
 	this.fillButtons();
 }
@@ -492,7 +562,6 @@ sparrow.prototype.fillButtons = function(){
 }
 
 sparrow.prototype.mergeImage = function(img1, img2, w, h, l, t, r){
-	console.log('merging');
 	var _this = this;
 	$.extend({
 		mergeImage : function (options) {
@@ -596,7 +665,7 @@ sparrow.prototype.thirdScreen = function(){
 		_this.finalScreen();
 	});
 
-	$('.fb-button').on('click', function(){
+	$('.fb-button.middle, .fb-button.topimg ').off('click').on('click', function(){
 		if(!_this.fb_image){
 			_this.sdk.tracker('E', 'ss_facebook');
 		}
@@ -605,19 +674,17 @@ sparrow.prototype.thirdScreen = function(){
 		var fbInterval = function () {
 			setTimeout(function () {
 				if (_this.merged != '') {
-
 					$('.loader-wrapper').addClass('hidden');
-					window.open('https://www.facebook.com/dialog/feed?app_id=1644304792511433&display=popup&name=Temukan%20inspirasi%20berkerundung%20terbaru%20untuk%20kamu%20yang%20stylish.&link=http%3A%2F%2Fsunsilkhijab.com%2F&picture='+encodeURIComponent(_this.merged)+'&redirect_uri=http%3A%2F%2Fsunsilkhijab.com%2F');
+					_this.sdk.linkOpener('https://www.facebook.com/dialog/feed?app_id=1644304792511433&display=popup&name=Temukan%20inspirasi%20berkerundung%20terbaru%20untuk%20kamu%20yang%20stylish.&link=http%3A%2F%2Fsunsilkhijab.com%2F&picture='+encodeURIComponent(_this.merged)+'&redirect_uri=http%3A%2F%2Fsunsilkhijab.com%2F');
 				} else {
 					fbInterval();
 				}
-
 			}, 500);
 		}
 		fbInterval();
 	});
 
-	$('.tw-button').on('click', function(){
+	$('.tw-button.middle, .tw-button.topimg').off('click').on('click', function(){
 		if(!_this.tw_image){
 			_this.sdk.tracker('E', 'ss_twitter');
 		}
@@ -627,9 +694,8 @@ sparrow.prototype.thirdScreen = function(){
 		var twInterval = function () {
 			setTimeout(function () {
 				if (_this.merged != '') {
-
 					$('.loader-wrapper').addClass('hidden');
-					window.open('https://twitter.com/intent/tweet?text=Temukan%20inspirasi%20berkerundung%20terbaru%20untuk%20kamu%20yang%20stylish.&original_referer='+encodeURIComponent(_this.shareHtml)+'&tw_p=tweetbutton&url='+encodeURIComponent(_this.shareHtml));
+					_this.sdk.linkOpener('https://twitter.com/intent/tweet?text=Temukan%20inspirasi%20berkerundung%20terbaru%20untuk%20kamu%20yang%20stylish.&original_referer='+encodeURIComponent(_this.shareHtml)+'&tw_p=tweetbutton&url='+encodeURIComponent(_this.shareHtml));
 				} else {
 					twInterval();
 				}
@@ -641,7 +707,8 @@ sparrow.prototype.thirdScreen = function(){
 
 sparrow.prototype.finalScreen = function(){
 	var _this = this;
-	$('.share-button, .fb-button, .tw-button').removeClass('middle').addClass('top');
+	$('.fb-button, .tw-button').removeClass('middle').addClass('topimg');
+	$('.share-button').removeClass('middle').addClass('top');
 	$('.main-circle').empty().removeClass('main-third').addClass('main-fourth');
 	$('.shampoo').removeClass('shampoo-left').addClass('shampoo-right');
 	$('.wordings').removeClass('word-third').addClass('word-fourth');

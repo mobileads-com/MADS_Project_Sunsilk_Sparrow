@@ -1,3 +1,9 @@
+body {
+    overflow: hidden;
+    background: white;
+    margin: 0px;
+}
+
 div#rma-widget{
 	height: 480px;
 	width: 320px;
@@ -13,10 +19,10 @@ div#rma-widget{
 }
 
 .frame > div.main-circle{
-	position: absolute;
-	height: 302px;
-	width: 318px;
-	top: 38px;
+    position: absolute;
+    height: 302px;
+    width: 318px;
+    top: 38px;
 }
 
 div.main-circle.main-first{
@@ -28,11 +34,11 @@ div.main-circle.main-first{
 div.main-circle.main-second{
 	background: url("../img/2-frame/circle.png") no-repeat;
 	background-size: contain;
-	left:18px;
+	left:6px;
 }
 
 div.main-circle.main-third{
-	left: 18px;
+	left: 0px;
 	height: 202px;
 	top: 126px;
 	width: 198px;
@@ -49,10 +55,10 @@ div.main-circle.main-fourth{
 
 .wordings{
 	position: absolute;
-	top: 348px;
-	height: 105px;
-	width: 195px;
-	left: 29px;
+	    top: 334px;
+	    height: 105px;
+	    width: 195px;
+	    left: 14px;
 }
 
 .wordings.word-first{
@@ -69,7 +75,7 @@ div.main-circle.main-fourth{
 	background: url("../img/3-frame/words_bottom.png") no-repeat;
 	background-size: contain;
 	left: 133px;
-	top: 330px;
+	top: 320px;
 }
 
 .wordings.word-fourth{
@@ -79,8 +85,8 @@ div.main-circle.main-fourth{
 
 .button-div {
 	position: absolute;
-	top: 453px;
-	padding-left: 18px;
+    top: 444px;
+    padding-left: 12px;
 }
 
 img.buttons {
@@ -95,8 +101,8 @@ img.share-button{
 }
 
 img.share-button.top {
-    top: 23px;
-    left: 26px;
+       top: 23px;
+    left: 9px;
 }
 
 img.share-button.middle {
@@ -113,8 +119,13 @@ img.fb-button {
 }
 
 img.fb-button.top {
-    top: 17px;
-    left: 75px;
+  top: 15px;
+    left: 64px;
+}
+
+img.fb-button.topimg {
+  top: 15px;
+    left: 64px;
 }
 
 img.fb-button.middle {
@@ -131,7 +142,12 @@ img.tw-button {
 }
 
 img.tw-button.top {
-    top: 17px;
+    top: 15px;
+    left: 105px;
+}
+
+img.tw-button.topimg {
+    top: 15px;
     left: 105px;
 }
 
@@ -142,22 +158,23 @@ img.tw-button.middle {
 
 img.logo {
 	height: 40px;
-	width: 76px;
-	left: 249px;
-	position: absolute;
+    width: 76px;
+    left: 226px;
+    position: absolute;
+    top: 7px;
 }
 
 img.shampoo.shampoo-right {
 	position: absolute;
-	top: 365px;
-	left: 215px;
-	height: 123px;
+	    top: 350px;
+	    left: 204px;
+	    height: 123px;
 }
 
 img.shampoo.shampoo-left {
 	position: absolute;
-	top: 365px;
-	height: 123px;
+    top: 346px;
+    height: 123px;
 }
 
 img.ring {
@@ -380,12 +397,12 @@ img.merge-image.dancer {
 
 .guide-wrapper{
 	width: 321px;
-	height: 481px;
-	background: rgba(0,0,0, 0.7);
-	position: absolute;
-	z-index: 10;
-	margin-top: -290px;
-	margin-left: -9px;
+    height: 481px;
+    background: rgba(0,0,0, 0.7);
+    position: absolute;
+    z-index: 10;
+    margin-top: -297px;
+    margin-left: -6px;
 }
 
 .loader-wrapper{
