@@ -95,13 +95,13 @@ img.buttons {
 }
 
 img.share-button{
-    width: 47px;
-    height: 12px;
+      width: 47px;
+    height: 15px;
     position: absolute;
 }
 
 img.share-button.top {
-       top: 23px;
+     top: 21px;
     left: 9px;
 }
 
@@ -112,7 +112,7 @@ img.share-button.middle {
 
 img.fb-button {
     width: 29px;
-    height: 27px;
+    height: 29px;
     position: absolute;
     cursor: pointer;
     z-index: 10;
@@ -135,7 +135,7 @@ img.fb-button.middle {
 
 img.tw-button {
     width: 29px;
-    height: 27px;
+    height: 29px;
     position: absolute;
     cursor: pointer;
     z-index: 10;
@@ -143,12 +143,12 @@ img.tw-button {
 
 img.tw-button.top {
     top: 15px;
-    left: 105px;
+    left: 93px;
 }
 
 img.tw-button.topimg {
-    top: 15px;
-    left: 105px;
+  top: 15px;
+    left: 93px;
 }
 
 img.tw-button.middle {
@@ -157,11 +157,11 @@ img.tw-button.middle {
 }
 
 img.logo {
-    height: 27px;
+  height: 37px;
     width: 76px;
-    left: 226px;
+    left: 231px;
     position: absolute;
-    top: 12px;
+    top: 8px;
 }
 
 img.shampoo.shampoo-right {
