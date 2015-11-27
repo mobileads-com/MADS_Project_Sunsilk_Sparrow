@@ -1,0 +1,414 @@
+div#rma-widget{
+	height: 480px;
+	width: 320px;
+	margin: 0;
+	overflow: hidden;
+	background: transparent;
+	/*border: 1px solid blue;*/
+}
+
+.frame{
+	height: 480px;
+	width: 320px;
+}
+
+.frame > div.main-circle{
+	position: absolute;
+	height: 302px;
+	width: 318px;
+	top: 38px;
+}
+
+div.main-circle.main-first{
+	background: url("../img/1-frame/girls.png") no-repeat;
+	background-size: contain;
+	left:12px;
+}
+
+div.main-circle.main-second{
+	background: url("../img/2-frame/circle.png") no-repeat;
+	background-size: contain;
+	left:18px;
+}
+
+div.main-circle.main-third{
+	left: 18px;
+	height: 202px;
+	top: 126px;
+	width: 198px;
+}
+
+div.main-circle.main-fourth{
+	background: url("../img/1-frame/girls.png") no-repeat;
+	background-size: contain;
+	position: absolute;
+	height: 302px;
+	width: 318px;
+	top: 38px;
+}
+
+.wordings{
+	position: absolute;
+	top: 348px;
+	height: 105px;
+	width: 195px;
+	left: 29px;
+}
+
+.wordings.word-first{
+	background: url("../img/1-frame/words.png") no-repeat;
+	background-size: contain;
+}
+
+.wordings.word-second{
+	background: url("../img/2-frame/words.png") no-repeat;
+	background-size: contain;
+}
+
+.wordings.word-third{
+	background: url("../img/3-frame/words_bottom.png") no-repeat;
+	background-size: contain;
+	left: 133px;
+	top: 330px;
+}
+
+.wordings.word-fourth{
+	background: url("../img/4-frame/words.png") no-repeat;
+	background-size: contain;
+}
+
+.button-div {
+	position: absolute;
+	top: 453px;
+	padding-left: 18px;
+}
+
+img.buttons {
+	height: 31px;
+	cursor: pointer;
+}
+
+img.share-button{
+    width: 47px;
+    height: 12px;
+    position: absolute;
+}
+
+img.share-button.top {
+    top: 23px;
+    left: 26px;
+}
+
+img.share-button.middle {
+    top: 171px;
+    left: 238px;
+}
+
+img.fb-button {
+    width: 29px;
+    height: 27px;
+    position: absolute;
+    cursor: pointer;
+    z-index: 10;
+}
+
+img.fb-button.top {
+    top: 17px;
+    left: 75px;
+}
+
+img.fb-button.middle {
+    top: 190px;
+    left: 227px;
+}
+
+img.tw-button {
+    width: 29px;
+    height: 27px;
+    position: absolute;
+    cursor: pointer;
+    z-index: 10;
+}
+
+img.tw-button.top {
+    top: 17px;
+    left: 105px;
+}
+
+img.tw-button.middle {
+    top: 190px;
+    left: 266px;
+}
+
+img.logo {
+	height: 40px;
+	width: 76px;
+	left: 249px;
+	position: absolute;
+}
+
+img.shampoo.shampoo-right {
+	position: absolute;
+	top: 365px;
+	left: 215px;
+	height: 123px;
+}
+
+img.shampoo.shampoo-left {
+	position: absolute;
+	top: 365px;
+	height: 123px;
+}
+
+img.ring {
+	height: 300px;
+	width: 322px;
+	position: absolute;
+	top: 2px;
+	left: -8px;
+	pointer-events: none;
+	z-index: 5;
+}
+
+img.btn-share-now {
+    width: 177px;
+    height: 41px;
+    margin-top: -12px;
+    margin-left: 109px;
+    cursor: pointer;
+}
+
+img.btn-try-again {
+    width: 109px;
+    position: absolute;
+    left: 200px;
+    top: 144px;
+    height: 44px;
+    cursor: pointer;
+}
+
+img.btn-more-info {
+    height: 31px;
+    width: 169px;
+    cursor: pointer;
+}
+
+#take-picture{
+	display: none;
+}
+
+img.carousel-arrow {
+    height: 30px;
+}
+
+.options-menu > img {
+	height: 21px;
+	width: 24px;
+	position: absolute;
+	top: 22px;
+	z-index: 6;
+	cursor: pointer;
+}
+
+.options-menu > img.zoom-minus {
+    left: 108px;
+}
+
+.options-menu > img.zoom-plus {
+    left: 140px;
+}
+
+.options-menu > img.rotate {
+    left: 173px;
+}
+
+.jcarousel-control-prev{
+	position: absolute;
+	top:139px;
+	z-index: 6;
+}
+
+.jcarousel-control-next{
+	position: absolute;
+	top: 139px;
+	left: 275px;
+	z-index: 6;
+}
+
+.main-third > img.word-third-top {
+    position: absolute;
+    top: -85px;
+    height: 83px;
+    width: auto;
+}
+
+.jcarousel {
+    position: relative;
+    overflow: hidden;
+     /*border: 1px solid blue; */
+    width: 260px;
+    left: 28px;
+    height: 260px;
+    top: 28px;
+    border-radius: 144px;
+}
+
+.jcarousel ul {
+    width: 20000em;
+    position: relative;
+
+    /* Optional, required in this case since it's a <ul> element */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.jcarousel li {
+    /* Required only for block elements like <li>'s */
+    float: left;
+}
+
+p.jcarousel-pagination {
+	display: block;
+	margin-left: 52px;
+	position: absolute;
+	top: 263px;
+	z-index: 6;
+}
+
+.jcarousel-pagination a {
+	text-decoration: none;
+	display: inline-block;
+	font-size: 11px;
+	line-height: 14px;
+	min-width: 14px;
+	background: #fff;
+	color: #4E443C;
+	border-radius: 14px;
+	padding: 1px;
+	text-align: center;
+	margin-right: 2px;
+	opacity: .75;
+	margin-left: 7px;
+	height: 14px;
+	border: 1px solid #5e265b;
+}
+
+div#carousel > ul > li {
+	padding-left: 14px;
+	padding-right: 14px;
+	pointer-events:none;
+}
+
+div#carousel > ul > li > img {
+	pointer-events: none;
+	z-index: 3;
+	position: relative;
+}
+
+
+.canvas-work {
+	position: absolute;
+	top: 1px;
+	height: 256px;
+	width: 261px;
+	left: -1px;
+	border-radius: 126px;
+	z-index: 0;
+}
+
+.canvas-work > .canvas-move > img {
+	/*z-index: 0;*/
+	max-width: 250px;
+}
+
+.canvas-move {
+    /* border: 1px solid blue; */
+    /* z-index: 10; */
+    height: 259px;
+    width: 260px;
+    border-radius: 148px;
+    margin-top: -2px;
+}
+
+
+.hidden {
+    display: none!important;
+    visibility: hidden!important;
+}
+
+img.merge-image {
+	position: relative;
+	top: 16px;
+	width: 169px;
+	left: -11px;
+	height: 175px;
+	transform: scale(1.2,1.2);
+}
+
+img.merge-image.dancer {
+	position: relative;
+	top: 16px;
+	width: 169px;
+	left: -28px;
+	height: 175px;
+	transform: scale(1.2,1.2);
+}
+
+.merged {
+	position: absolute;
+	width: 169px;
+	height: 175px;
+	background: #fff;
+	top: 16px;
+	left: 51%;
+	margin-left: -84px;
+	-webkit-transform: rotate(-6deg);
+	-ms-transform: rotate(-6deg);
+	-o-transform: rotate(-6deg);
+	transform: rotate(-6deg);
+	-webkit-box-shadow: 4px 5px 7px 0px rgba(0,0,0,0.35);
+	-moz-box-shadow: 4px 5px 7px 0px rgba(0,0,0,0.35);
+	box-shadow: 4px 5px 7px 0px rgba(0,0,0,0.35);
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	padding: 5px;
+	border: 5px #fff solid;
+	overflow: hidden;
+}
+
+.guide-wrapper{
+	width: 321px;
+	height: 481px;
+	background: rgba(0,0,0, 0.7);
+	position: absolute;
+	z-index: 10;
+	margin-top: -290px;
+	margin-left: -9px;
+}
+
+.loader-wrapper{
+	width: 321px;
+	height: 481px;
+	background: rgba(0,0,0, 0.7);
+	position: absolute;
+	z-index: 10;
+	margin-top: -481px;
+	margin-left: 0px;
+}
+
+img.guide {
+	position: relative;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 131px;
+}
+
+img.profession-image {
+    margin-top: -230px;
+    position: absolute;
+    width: 157px;
+    height: 175px;
+}
