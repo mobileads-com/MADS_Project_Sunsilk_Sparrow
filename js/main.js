@@ -678,7 +678,7 @@ sparrow.prototype.thirdScreen = function(){
 			setTimeout(function () {
 				if (_this.merged != '') {
 					$('.loader-wrapper').addClass('hidden');
-					_this.sdk.linkOpener('https://www.facebook.com/dialog/feed?app_id=1644304792511433&display=popup&name=Temukan%20inspirasi%20berkerundung%20terbaru%20untuk%20kamu%20yang%20stylish.&link=http%3A%2F%2Fsunsilkhijab.com%2F&picture='+encodeURIComponent(_this.merged)+'&redirect_uri=http%3A%2F%2Fsunsilkhijab.com%2F');
+					_this.sdk.linkOpener('https://www.facebook.com/dialog/feed?app_id=1679076375659284&display=popup&name=Kilau%20Rambut%20Hitammu%20Selalu%20Mendampingi%20Dalam%20Wujudkan&link=http%3A%2F%2Fsunsilkblackshine.com%2F&picture='+encodeURIComponent(_this.merged)+'&redirect_uri=http%3A%2F%2Fsunsilkblackshine.com%2F');
 				} else {
 					fbInterval();
 				}
