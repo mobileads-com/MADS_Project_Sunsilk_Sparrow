@@ -14,7 +14,7 @@ var mads = function () {
 	} else if (typeof custTracker != 'undefined') {
 		this.custTracker = custTracker;
 	} else {
-		this.custTracker = ['https://track.richmediaads.com/a/analytic.htm?uid=0&isNew={{isNew}}&referredUrl={{referredUrl}}&rmaId={{rmaId}}&domainId=0&pageLoadId={{pageLoadId}}&userId={{userId}}&pubUserId=0&campaignId={{campaignId}}&browser={{browser}}&os={{os}}&domain={{domain}}&callback=trackSuccess&callback=trackSuccess&type={{type}}&tt={{tt}}&value={{value}}', 'https://trk.mwstats.net/stats/ua-no-id.png?ii={{type}}&io=391'];//[];
+		this.custTracker = [];
 	}
 
 	/* Unique ID on each initialise */
@@ -177,21 +177,21 @@ sparrow.prototype.preload = function(){
   	'girls.src='+ _this.sdk.path+' "img/1-frame/girls.png";'+
   	'arrow_left.src='+ _this.sdk.path+' "img/2-frame/arrow-left.png";'+
   	'arrow_right.src='+ _this.sdk.path+' "img/2-frame/arrow-right.png";'
-  	'chef_01.src='+ _this.sdk.path+' "img/2-frame/chef_01.png";'+
-  	'dancer_01.src='+ _this.sdk.path+' "img/2-frame/dancer_01.png";'
-  	'designer_01.src='+ _this.sdk.path+' "img/2-frame/designer_01.png";'+
-  	'model_01.src='+ _this.sdk.path+' "img/2-frame/model_01.png";'
-  	'singer_01.src='+ _this.sdk.path+' "img/2-frame/singer_01.png";'+
-  	'writer_01.src='+ _this.sdk.path+' "img/2-frame/writer_01.png";' +
-  	'photographer_01.src='+ _this.sdk.path+' "img/2-frame/photographer_01.png";'+
+  	'chef_01.src='+ _this.sdk.path+' "img/2-frame/chef.png";'+
+  	'dancer_01.src='+ _this.sdk.path+' "img/2-frame/dancer.png";'
+  	'designer_01.src='+ _this.sdk.path+' "img/2-frame/designer.png";'+
+  	'model_01.src='+ _this.sdk.path+' "img/2-frame/model.png";'
+  	'singer_01.src='+ _this.sdk.path+' "img/2-frame/singer.png";'+
+  	'writer_01.src='+ _this.sdk.path+' "img/2-frame/writer.png";' +
+  	'photographer_01.src='+ _this.sdk.path+' "img/2-frame/photographer.png";'+
   	'ring.src='+ _this.sdk.path+' "img/2-frame/ring.png";'+
-  	'chef_02.src='+ _this.sdk.path+' "img/3-frame/chef_02.png";'+
-  	'dancer_02.src='+ _this.sdk.path+' "img/3-frame/dancer_02.png";'
-  	'designer_02.src='+ _this.sdk.path+' "img/3-frame/designer_02.png";'+
-  	'model_02.src='+ _this.sdk.path+' "img/3-frame/model_02.png";'
-  	'singer_02.src='+ _this.sdk.path+' "img/3-frame/singer_02.png";'+
-  	'writer_02.src='+ _this.sdk.path+' "img/3-frame/writer_02.png";' +
-  	'photographer_02.src='+ _this.sdk.path+' "img/3-frame/photographer_02.png";'+
+  	'chef_02.src='+ _this.sdk.path+' "img/3-frame/chef.png";'+
+  	'dancer_02.src='+ _this.sdk.path+' "img/3-frame/dancer.png";'
+  	'designer_02.src='+ _this.sdk.path+' "img/3-frame/designer.png";'+
+  	'model_02.src='+ _this.sdk.path+' "img/3-frame/model.png";'
+  	'singer_02.src='+ _this.sdk.path+' "img/3-frame/singer.png";'+
+  	'writer_02.src='+ _this.sdk.path+' "img/3-frame/writer.png";' +
+  	'photographer_02.src='+ _this.sdk.path+' "img/3-frame/photographer.png";'+
   	'words_bottom.src='+ _this.sdk.path+' "img/3-frame/words_bottom.png";' +
   	'words_top.src='+ _this.sdk.path+' "img/3-frame/words_top.png";'+
   	'words_fourth.src='+ _this.sdk.path+' "img/4-frame/words.png";';
@@ -293,13 +293,13 @@ sparrow.prototype.secondScreen = function(img, match){
 
 		$('.main-second').append('<img src="'+ _this.sdk.path +'img/2-frame/ring.png" class="ring" />')
 		$('#carousel ul').empty();
-		$('#carousel ul').append('<li><img data-next="'+ _this.sdk.path +'img/3-frame/singer_02.png" src="'+_this.sdk.path+'img/2-frame/singer_01.png" id="singer" class="profession" width="340" height="290" style="margin-left: -65px;margin-top: -12px;" /></li>');
-		$('#carousel ul').append('<li><img data-next="'+ _this.sdk.path +'img/3-frame/chef_02.png" src="'+_this.sdk.path+'img/2-frame/chef_01.png" id="chef" class="profession" width="340" height="290" style="margin-left: -48px;margin-top: -5px;" /></li>');
-		$('#carousel ul').append('<li><img data-next="'+ _this.sdk.path +'img/3-frame/writer_02.png" src="'+_this.sdk.path+'img/2-frame/writer_01.png" id="writer" class="profession" width="340" height="290" style="margin-left: -77px;margin-top: 2px;" /></li>');
-		$('#carousel ul').append('<li><img data-next="'+ _this.sdk.path +'img/3-frame/model_02.png" src="'+_this.sdk.path+'img/2-frame/model_01.png" id="model" class="profession" width="320" height="280" style="margin-left: -58px;margin-top: 1px;" /></li>');
-		$('#carousel ul').append('<li><img data-next="'+ _this.sdk.path +'img/3-frame/dancer_02.png" src="'+_this.sdk.path+'img/2-frame/dancer_01.png" id="dancer" class="profession" width="320" height="290" style="margin-left: -46px;margin-top: -14px;" /></li>');
-		$('#carousel ul').append('<li><img data-next="'+ _this.sdk.path +'img/3-frame/designer_02.png" src="'+_this.sdk.path+'img/2-frame/designer_01.png" id="designer" class="profession" width="320" height="280" style="margin-left: -51px;margin-top: -4px;" /></li>');
-		$('#carousel ul').append('<li><img data-next="'+ _this.sdk.path +'img/3-frame/photographer_02.png" src="'+_this.sdk.path+'img/2-frame/photographer_01.png" id="photographer" class="profession" width="300" height="290" style="margin-left: -44px;margin-top: 6px;" /></li>');
+		$('#carousel ul').append('<li><img data-next="'+ _this.sdk.path +'img/3-frame/singer.png" src="'+_this.sdk.path+'img/2-frame/singer.png" id="singer" class="profession" width="340" height="290" style="margin-left: -69px;margin-top: -7px;" /></li>');
+		$('#carousel ul').append('<li><img data-next="'+ _this.sdk.path +'img/3-frame/chef.png" src="'+_this.sdk.path+'img/2-frame/chef.png" id="chef" class="profession" width="340" height="320" style="margin-left: -48px;margin-top: -29px;" /></li>');
+		$('#carousel ul').append('<li><img data-next="'+ _this.sdk.path +'img/3-frame/writer.png" src="'+_this.sdk.path+'img/2-frame/writer.png" id="writer" class="profession" width="340" height="320" style="margin-left: -77px;margin-top: -19px;" /></li>');
+		$('#carousel ul').append('<li><img data-next="'+ _this.sdk.path +'img/3-frame/model.png" src="'+_this.sdk.path+'img/2-frame/model.png" id="model" class="profession" width="320" height="300" style="margin-left: -62px;margin-top: -11px;" /></li>');
+		$('#carousel ul').append('<li><img data-next="'+ _this.sdk.path +'img/3-frame/dancer.png" src="'+_this.sdk.path+'img/2-frame/dancer.png" id="dancer" class="profession" width="350" height="300" style="margin-left: -75px;margin-top: -18px;" /></li>');
+		$('#carousel ul').append('<li><img data-next="'+ _this.sdk.path +'img/3-frame/designer.png" src="'+_this.sdk.path+'img/2-frame/designer.png" id="designer" class="profession" width="320" height="320" style="margin-left: -61px;margin-top: -32px;" /></li>');
+		$('#carousel ul').append('<li><img data-next="'+ _this.sdk.path +'img/3-frame/photographer.png" src="'+_this.sdk.path+'img/2-frame/photographer.png" id="photographer" class="profession" width="300" height="290" style="margin-left: -44px;margin-top: 6px;" /></li>');
 
 		
 		$('.jcarousel').jcarousel();
@@ -331,7 +331,7 @@ sparrow.prototype.secondScreen = function(img, match){
 			setTimeout(function(){
 				$('.guide-wrapper').addClass('hidden');
 
-			}, 7000);
+			}, 1000);
 		}else{
 			$('.guide-wrapper').addClass('hidden');
 		}
@@ -515,8 +515,10 @@ sparrow.prototype.fillButtons = function(){
 	$('.btn-choose').on('click', function(){
 		_this.sdk.tracker('E', 'ss_pilih');
 		$('.loader-wrapper').removeClass('hidden');
+		var i = $('.jcarousel').jcarousel('visible').find('img').attr('id');
+		$('.jcarousel').jcarousel('visible').find('img').attr('src', _this.sdk.path + 'img/3-frame/' + i +'.png')
 		var profession = $('.jcarousel').jcarousel('visible').find('img').attr('src');
-		var profession2 = $('.jcarousel').jcarousel('visible').find('img').attr('data-next');
+		// var profession2 = $('.jcarousel').jcarousel('visible').find('img').attr('data-next');
 		var me = $('.canvas-move').find('img').attr('src');
 		var pos = $('.canvas-move').find('img').position();
 		var t =  parseInt($('.canvas-move').find('img').css('top').replace('px', ''));
@@ -547,7 +549,7 @@ sparrow.prototype.fillButtons = function(){
 			l += 2;
 			t -= 2;
 		}
-		_this.mergeImage(me, profession2, w, h, l , t, r);		
+		_this.mergeImage(me, profession, w, h, l , t, r);		
 	});
 }
 
@@ -555,7 +557,7 @@ sparrow.prototype.mergeImage = function(img1, img2, w, h, l, t, r){
 	var _this = this;
 	$.extend({
 		mergeImage : function (options) {
-			$(options.container).append('<canvas id="mergeImageCanvas" style="display:none;"></canvas>');
+			$(options.container).append('<canvas id="mergeImageCanvas" style="display:block;"></canvas>');
 
 			var canvas = $("#mergeImageCanvas")[0];
 			canvas.width = 303;
@@ -568,8 +570,8 @@ sparrow.prototype.mergeImage = function(img1, img2, w, h, l, t, r){
 
 			if (typeof options.scale != 'undefined') {
                 
-                var adjustmentX = 27 + ( -65 - parseInt($('.jcarousel').jcarousel('visible').find('img').css('margin-left').replace('px','')) );
-                var adjustmentY = 13 + ( -12 - parseInt($('.jcarousel').jcarousel('visible').find('img').css('margin-top').replace('px','')));
+	                var adjustmentX = 27 + ( -65 - parseInt($('.jcarousel').jcarousel('visible').find('img').css('margin-left').replace('px','')) );
+	                var adjustmentY = 13 + ( -12 - parseInt($('.jcarousel').jcarousel('visible').find('img').css('margin-top').replace('px','')));
 
 				var x = options.width / 100;
 				var n = options.scale * 100;
@@ -704,7 +706,7 @@ sparrow.prototype.finalScreen = function(){
 	$('.button-div').removeClass('div-right').addClass('div-left').empty().append('<img src="'+ _this.sdk.path +'img/4-frame/more-info.png" class="btn-more-info" />');
 
 	$('.btn-more-info').on('click', function(){
-		_this.sdk.tracker('CTR', 'ss_site');
+		_this.sdk.tracker('CTR', 'ss_info_selengkapnya');
 		_this.sdk.linkOpener('http://kilau.sunsilk.co.id/');
 	});
 }
