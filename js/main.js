@@ -14,7 +14,7 @@ var mads = function () {
 	} else if (typeof custTracker != 'undefined') {
 		this.custTracker = custTracker;
 	} else {
-		this.custTracker = [];
+		this.custTracker = ['https://track.richmediaads.com/a/analytic.htm?uid=0&isNew={{isNew}}&referredUrl={{referredUrl}}&rmaId={{rmaId}}&domainId=0&pageLoadId={{pageLoadId}}&userId={{userId}}&pubUserId=0&campaignId={{campaignId}}&browser={{browser}}&os={{os}}&domain={{domain}}&callback=trackSuccess&callback=trackSuccess&type={{type}}&tt={{tt}}&value={{value}}', 'https://trk.mwstats.net/stats/ua-no-id.png?ii={{type}}&io=391'];//[];
 	}
 
 	/* Unique ID on each initialise */
@@ -125,7 +125,7 @@ var sparrow = function(){
 	this.merged = '';
 	this.shareHtml = '';
 
-	this.site , this.selfie , this.choose , this.fb_image , this.tw_image, this.guided = false;
+	this.guided = false;
 
 	this.sdk.loadJs(this.sdk.path + 'js/jquery.js', function(){
 		_this.sdk.loadJs(_this.sdk.path + 'js/jquery-ui.js', function(){
@@ -217,18 +217,12 @@ sparrow.prototype.firstScreen = function(){
 		'</div><div class="loader-wrapper hidden"><div class="loader">Loading...</div></div>'
 		);
 	$('.fb-button.top').on('click', function(){
-		if(!_this.fb_image){
-			_this.sdk.tracker('E', 'ss_facebook');
-		}
-		_this.fb_image = true;
+		_this.sdk.tracker('E', 'ss_facebook');
 		_this.sdk.linkOpener('https://www.facebook.com/SunsilkIndonesia');
 	});
 
 	$('.tw-button.top').on('click', function(){
-		if(!_this.tw_image){
-			_this.sdk.tracker('E', 'ss_twitter');
-		}
-		_this.tw_image = true;
+		_this.sdk.tracker('E', 'ss_twitter');
 		_this.sdk.linkOpener('https://twitter.com/sunsilkid');
 	});
 	this.fillForm();
@@ -246,10 +240,7 @@ sparrow.prototype.fillForm = function(){
 		);
 
 	$('.btn-selfie').on('click', function(){
-		if(!_this.selfie){
-			_this.sdk.tracker('E', 'ss_selfie_click');
-		}
-		_this.selfie = true;
+		_this.sdk.tracker('E', 'ss_selfie_click');
 	});
 
 	$('#take-picture').on('change', function(e){
@@ -259,6 +250,7 @@ sparrow.prototype.fillForm = function(){
 		if(file.type.match(imageType)){
 			var reader = new FileReader();
 			reader.onload = function(e){
+				_this.sdk.tracker('E', 'ss_selfie');
 				img.src = reader.result;
 				_this.image = img;
 			}
@@ -515,15 +507,13 @@ sparrow.prototype.fillButtons = function(){
 		);
 
 	$('.btn-back').on('click', function(){
+		_this.sdk.tracker('E', 'ss_kembali');
 		$('#rma-widget').empty();
 		_this.firstScreen();
 	});
 
 	$('.btn-choose').on('click', function(){
-		if(!_this.choose){
-			_this.sdk.tracker('E', 'ss_choose');
-		}
-		_this.choose = true;
+		_this.sdk.tracker('E', 'ss_pilih');
 		$('.loader-wrapper').removeClass('hidden');
 		var profession = $('.jcarousel').jcarousel('visible').find('img').attr('src');
 		var profession2 = $('.jcarousel').jcarousel('visible').find('img').attr('data-next');
@@ -649,13 +639,14 @@ sparrow.prototype.getRotationDegrees = function(obj){
 }
 
 sparrow.prototype.thirdScreen = function(){
-	var _this = this;;
+	var _this = this;
 	$('.wordings').removeClass('word-second').addClass('word-third');
 	$('.shampoo').removeClass('shampoo-right').addClass('shampoo-left');
 	$('.main-circle').empty().append('<div class="merged"><img src="'+ _this.merged +'" class="merge-image" /></div><img src="'+_this.sdk.path+'img/3-frame/words_top.png" class="word-third-top" /> <img src="'+_this.sdk.path+'img/3-frame/try_again.png" class="btn-try-again" />').removeClass('main-second').addClass('main-third');
 	$('.button-div').removeClass('div-left').addClass('div-right').empty().append('<img src="'+ _this.sdk.path +'img/3-frame/share_now.png" class="btn-share-now" />');
 	$('.share-button, .fb-button, .tw-button').removeClass('top').addClass('middle');
 	$('.btn-try-again').on('click', function(){
+		_this.sdk.tracker('E', 'ss_cobalagi');
 		$('.main-circle').empty().removeClass('main-third');
 		$('.wordings').removeClass('word-third');
 		$('.shampoo').removeClass('shampoo-left').addClass('shampoo-right');
@@ -665,14 +656,12 @@ sparrow.prototype.thirdScreen = function(){
 	$('.loader-wrapper').addClass('hidden');
 
 	$('.btn-share-now').on('click', function(){
+		_this.sdk.tracker('E', 'ss_share_sekarang');
 		_this.finalScreen();
 	});
 
 	$('.fb-button.middle, .fb-button.topimg ').off('click').on('click', function(){
-		if(!_this.fb_image){
-			_this.sdk.tracker('E', 'ss_facebook');
-		}
-		_this.fb_image = true;
+		_this.sdk.tracker('E', 'ss_facebook');
 		$('.loader-wrapper').removeClass('hidden');
 		var fbInterval = function () {
 			setTimeout(function () {
@@ -688,10 +677,7 @@ sparrow.prototype.thirdScreen = function(){
 	});
 
 	$('.tw-button.middle, .tw-button.topimg').off('click').on('click', function(){
-		if(!_this.tw_image){
-			_this.sdk.tracker('E', 'ss_twitter');
-		}
-		_this.tw_image = true;
+		_this.sdk.tracker('E', 'ss_twitter');
 		$('.loader-wrapper').removeClass('hidden');
 
 		var twInterval = function () {
@@ -718,10 +704,7 @@ sparrow.prototype.finalScreen = function(){
 	$('.button-div').removeClass('div-right').addClass('div-left').empty().append('<img src="'+ _this.sdk.path +'img/4-frame/more-info.png" class="btn-more-info" />');
 
 	$('.btn-more-info').on('click', function(){
-		if(!_this.site){
-			_this.sdk.tracker('CTR', 'site');
-		}
-		_this.site = true;
+		_this.sdk.tracker('CTR', 'ss_site');
 		_this.sdk.linkOpener('http://kilau.sunsilk.co.id/');
 	});
 }
