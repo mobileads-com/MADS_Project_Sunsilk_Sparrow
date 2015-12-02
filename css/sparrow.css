@@ -178,10 +178,10 @@ img.shampoo.shampoo-left {
 }
 
 img.ring {
-	height: 300px;
+	height: 315px;
 	width: 322px;
 	position: absolute;
-	top: 2px;
+	top: -5px;
 	left: -8px;
 	pointer-events: none;
 	z-index: 5;
@@ -326,12 +326,13 @@ div#carousel > ul > li > img {
 
 .canvas-work {
 	position: absolute;
-	top: 1px;
-	height: 256px;
-	width: 261px;
-	left: -1px;
+	top: 28px;
+	height: 258px;
+	width: 260px;
+	left: 29px;
 	border-radius: 126px;
 	z-index: 0;
+	overflow: hidden;
 }
 
 .canvas-work > .canvas-move > img {
@@ -429,4 +430,11 @@ img.profession-image {
     position: absolute;
     width: 157px;
     height: 175px;
+}
+
+.last-frame {
+    height: 480px;
+    width: 320px;
+    /*border: 1px solid blue;*/
+    position: absolute;
 }

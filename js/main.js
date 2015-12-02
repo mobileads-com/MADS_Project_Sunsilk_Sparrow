@@ -108,7 +108,6 @@ mads.prototype.loadCss = function (href) {
 	this.headTag.appendChild(link);
 }
 
-
 var sparrow = function(){
 	var _this = this;
 	this.sdk = new mads();
@@ -275,8 +274,8 @@ sparrow.prototype.secondScreen = function(img, match){
 				'<img src="'+ _this.sdk.path +'img/2-frame/rotate.png" class="rotate" />' +
 			'</div>' +
 			'<div id="carousel" class="jcarousel"><ul></ul>'+
-				'<div class="canvas-work"><div class="canvas-move"></div></div>' +
 			'</div>' +
+			'<div class="canvas-work"><div class="canvas-move"></div></div>' +
 			'<div class="guide-wrapper"><img src="'+ _this.sdk.path +'img/guide.gif" class="guide" /></div>' +
 			'<a href="#" class="jcarousel-control-prev" data-jcarouselcontrol="true"><img src="'+_this.sdk.path+'img/2-frame/arrow-left.png" class="carousel-arrow"/></a>' +
 			'<a href="#" class="jcarousel-control-next" data-jcarouselcontrol="true"><img src="'+_this.sdk.path+'img/2-frame/arrow-right.png" class="carousel-arrow"/></a>' +
@@ -293,13 +292,13 @@ sparrow.prototype.secondScreen = function(img, match){
 
 		$('.main-second').append('<img src="'+ _this.sdk.path +'img/2-frame/ring.png" class="ring" />')
 		$('#carousel ul').empty();
-		$('#carousel ul').append('<li><img data-next="'+ _this.sdk.path +'img/3-frame/singer.png" src="'+_this.sdk.path+'img/2-frame/singer.png" id="singer" class="profession" width="340" height="290" style="margin-left: -69px;margin-top: -7px;" /></li>');
+		$('#carousel ul').append('<li><img data-next="'+ _this.sdk.path +'img/3-frame/singer.png" src="'+_this.sdk.path+'img/2-frame/singer.png" id="singer" class="profession" width="330" height="320" style="margin-left: -59px;margin-top: -36px;" /></li>');
 		$('#carousel ul').append('<li><img data-next="'+ _this.sdk.path +'img/3-frame/chef.png" src="'+_this.sdk.path+'img/2-frame/chef.png" id="chef" class="profession" width="340" height="320" style="margin-left: -48px;margin-top: -29px;" /></li>');
-		$('#carousel ul').append('<li><img data-next="'+ _this.sdk.path +'img/3-frame/writer.png" src="'+_this.sdk.path+'img/2-frame/writer.png" id="writer" class="profession" width="340" height="320" style="margin-left: -77px;margin-top: -19px;" /></li>');
+		$('#carousel ul').append('<li><img data-next="'+ _this.sdk.path +'img/3-frame/writer.png" src="'+_this.sdk.path+'img/2-frame/writer.png" id="writer" class="profession" width="350" height="340" style="margin-left: -76px;margin-top: -46px;" /></li>');
 		$('#carousel ul').append('<li><img data-next="'+ _this.sdk.path +'img/3-frame/model.png" src="'+_this.sdk.path+'img/2-frame/model.png" id="model" class="profession" width="320" height="300" style="margin-left: -62px;margin-top: -11px;" /></li>');
 		$('#carousel ul').append('<li><img data-next="'+ _this.sdk.path +'img/3-frame/dancer.png" src="'+_this.sdk.path+'img/2-frame/dancer.png" id="dancer" class="profession" width="350" height="300" style="margin-left: -75px;margin-top: -18px;" /></li>');
 		$('#carousel ul').append('<li><img data-next="'+ _this.sdk.path +'img/3-frame/designer.png" src="'+_this.sdk.path+'img/2-frame/designer.png" id="designer" class="profession" width="320" height="320" style="margin-left: -61px;margin-top: -32px;" /></li>');
-		$('#carousel ul').append('<li><img data-next="'+ _this.sdk.path +'img/3-frame/photographer.png" src="'+_this.sdk.path+'img/2-frame/photographer.png" id="photographer" class="profession" width="300" height="290" style="margin-left: -44px;margin-top: 6px;" /></li>');
+		$('#carousel ul').append('<li><img data-next="'+ _this.sdk.path +'img/3-frame/photographer.png" src="'+_this.sdk.path+'img/2-frame/photographer.png" id="photographer" class="profession" width="310" height="320" style="margin-left: -44px;margin-top: -34px;" /></li>');
 
 		
 		$('.jcarousel').jcarousel();
@@ -331,7 +330,7 @@ sparrow.prototype.secondScreen = function(img, match){
 			setTimeout(function(){
 				$('.guide-wrapper').addClass('hidden');
 
-			}, 1000);
+			}, 7000);
 		}else{
 			$('.guide-wrapper').addClass('hidden');
 		}
@@ -681,7 +680,6 @@ sparrow.prototype.thirdScreen = function(){
 	$('.tw-button.middle, .tw-button.topimg').off('click').on('click', function(){
 		_this.sdk.tracker('E', 'ss_twitter');
 		$('.loader-wrapper').removeClass('hidden');
-
 		var twInterval = function () {
 			setTimeout(function () {
 				if (_this.merged != '') {
@@ -704,8 +702,8 @@ sparrow.prototype.finalScreen = function(){
 	$('.shampoo').removeClass('shampoo-left').addClass('shampoo-right');
 	$('.wordings').removeClass('word-third').addClass('word-fourth');
 	$('.button-div').removeClass('div-right').addClass('div-left').empty().append('<img src="'+ _this.sdk.path +'img/4-frame/more-info.png" class="btn-more-info" />');
-
-	$('.btn-more-info').on('click', function(){
+	$('.frame').append('<div class="last-frame"></div>')
+	$('.btn-more-info, .last-frame').on('click', function(){
 		_this.sdk.tracker('CTR', 'ss_info_selengkapnya');
 		_this.sdk.linkOpener('http://kilau.sunsilk.co.id/');
 	});
